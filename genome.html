@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Make a table based on JSON data.</h2>
+
+<p id="demo"></p>
+
+<script>
+var obj, txt;
+obj = {
+    id:"HG002",
+    seq:[
+    { type:"illumina",
+        machine:"HiSeq 2500",
+        readlength:"2x125",
+        depth:"15X",
+        data:[ {
+            bam:"GRCh38",
+            size:"33 Gbytes",
+            location:"/hpcfs/groups/phoenix-hpc-rc003/genomeData/giabftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams",
+            source:"ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams/"
+        }],
+    }
+]
+
+};
+
+    txt = "<table border='1'>"
+    for (i in obj.seq) {
+        txt += "<tr><td>" + obj.seq[i].type + "</td></tr>";
+        txt += "<tr><td>" + obj.seq[i].machine + "</td></tr>";
+        txt += "<tr><td>" + obj.seq[i].readlength + "</td></tr>";
+        txt += "<tr><td>" + obj.seq[i].depth + "</td></tr>";
+        for (j in obj.seq[i].data) {
+            txt += "<tr><td>" + obj.seq[i].data[j].bam + "</td></tr>";
+            txt += "<tr><td>" + obj.seq[i].data[j].size + "</td></tr>";
+            txt += "<tr><td>" + obj.seq[i].data[j].location + "</td></tr>";
+            txt += "<tr><td>" + obj.seq[i].data[j].source + "</td></tr>";
+        }
+    }
+    txt += "</table>"    
+    document.getElementById("demo").innerHTML = txt;
+
+
+</script>
+
+</body>
+</html>

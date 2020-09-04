@@ -1,0 +1,17 @@
+{
+id:"HG002",
+seq:[
+    { type:"illumina",
+        machine:"HiSeq 2500",
+        readlength:"2x125",
+        depth:"15X",
+        data:[
+            bam:"GRCh38",
+            size:"33 Gbytes"
+        ],
+        location:"/hpcfs/groups/phoenix-hpc-rc003/genomeData/giabftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams",
+        source:"ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/AshkenazimTrio/HG002_NA24385_son/NIST_Illumina_2x250bps/novoalign_bams/"
+    }
+]
+
+}
